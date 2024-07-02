@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE Basic Example</title>
+</head>
+<body>
+<h1 style="text-align: center">Open dev console to see logs</h1>
+
+<script>
+    const eventSource = new EventSource('/sse');
+
+    eventSource.onmessage = function(event) {
+        const messageContent = event.data
+        console.log(`Message received: `, messageContent);
+    };
+
+    // eventSource.close(); // to be invoked to disconnect
+</script>
+</body>
+</html>
